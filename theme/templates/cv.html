@@ -1,0 +1,19 @@
+{% extends "page.html" %}
+
+
+{% block head %}
+{{ super() }}
+<link href="{{ SITEURL }}/theme/css/d3.css" rel="stylesheet" />
+{% endblock %}
+
+{% block js %}
+{{ super() }}
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/d3.v3.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/colorbrewer.v1.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/timeline.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/pubStack.js"></script>
+<script type="text/javascript">timelineFromJson("Paired");</script>
+<script type="text/javascript">streamCsv("#stream", "Paired");</script>
+<script type="text/javascript">pubsBars("#stack", "Paired");</script>
+<script type="text/javascript">pubsList("#list");</script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{%endblock%}
+
+{% block head %}
+{{ super() }}
+<link href="{{ SITEURL }}/theme/css/d3.css" rel="stylesheet" />
+{% endblock %}
+
+{% block mainwrapper %}
+<header class="intro">
+    {{ page.content }}
+</header>
+{% endblock %}
+
+{% block js %}
+{{ super() }}
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/d3.v3.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/colorbrewer.v1.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/intro.js"></script>
+<script type="text/javascript">tagGraph("#taggraph");</script>
+{% endblock %}
